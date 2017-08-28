@@ -1,0 +1,236 @@
+// ======== START of GLOBAL STYLES ========
+// ===== OBJECTS =====
+body
+
+.show
+    display: block !important
+
+.hidden
+    display: none !important
+
+.invisible
+    visibility: hidden
+
+h1
+    font-family: $font-sans-first
+    font-size: $h1-font-size
+    color: $header-font-color
+    small
+        font-size: 20px
+
+h2
+    font-family: $font-sans-first
+    font-size: $h2-font-size
+    color: $header-font-color
+    small
+        font-size: 18px
+
+h3
+    font-family: $font-sans-first
+    font-size: $h3-font-size
+    color: $header-font-color
+    small
+    font-size: 16px
+
+h4
+    font-family: $font-sans-first
+    font-size: $h4-font-size
+    color: $header-font-color
+
+h5
+    font-family: $font-sans-first
+    font-size: $h5-font-size
+    color: $header-font-color
+
+h6
+    font-family: $font-sans-first
+    font-size: $h6-font-size
+    color: $header-font-color
+
+h7
+    font-family: $font-sans-first
+    font-family: $font-sans-first
+    font-size: $h7-font-size
+    color: $header-font-color
+
+h8
+    font-family: $font-sans-first
+    font-size: $h8-font-size
+    color: $header-font-color
+
+h9
+    font-family: $font-sans-first
+    font-size: $h9-font-size
+    color: $header-font-color
+
+p
+    font-family: $font-sans-first
+    font-size: $p-font-size
+    color: $font-color
+
+a
+    font-family: $font-sans-first
+    font-size: $a-font-size
+    color: $font-color
+    &:hover
+        text-decoration: underline
+    &:active
+        font-weight: bold
+    &:visited
+
+// ===== CHUNKS =====
+.nav
+    display: flex
+    padding-left: 0
+    margin-bottom: 0
+    list-style: none
+
+.nav-link
+    display: block
+    padding: $nav-link-padding
+
+.logo
+    font-size: 24px
+    text-decoration: none
+
+.navbar
+    position: relative
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: $navbar-height
+    line-height: $navbar-height
+    margin-bottom: $navbar-height
+    padding: $navbar-padding
+    background-color: black
+    p
+        font-family: $font-sans-first
+        color: $footer-font-color
+    a
+        color: $footer-font-color
+        text-decoration: none
+        margin-left: 20px
+        &:hover
+            display: inline
+            text-decoration: underline
+
+    .nav-sub-list
+        &:hover
+            text-decoration: underline
+            display: inline
+
+        ul > li > ul > li
+            display: none
+
+.hero
+    position: relative
+    padding: $hero-padding ($hero-padding / 2)
+    margin-bottom: $hero-padding
+    background: url(/themes/sodapress/images/pexels-photo.jpg) 50% 50%
+    background-size: cover
+    padding: ($hero-padding * 2) $hero-padding
+    min-height: $hero-height
+    max-height: $hero-max-height
+    margin-top: $navbar-height*3
+    h1
+        position: absolute
+        top: 70%
+        left: 50%
+        transform: translate(-50%, -50%)
+        text-shadow: black 2px 2px
+    h2
+        text-shadow: black 2px 2px
+        position: absolute
+        top: 70%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+.hero-fluid
+    padding-right: 0
+    padding-left: 0
+    border-radius: $border-radius-lg
+    min-height: $hero-height
+    max-height: $hero-max-height
+
+.footerbar
+    background-color: $footer-background-color
+    color: $footer-font-color
+    p
+        color: $footer-font-color
+    a
+        color: $footer-font-color
+
+.benefits
+    background-color: $instagram-color
+    padding: 100px 0
+
+.statistics
+    color: $footer-font-color
+    font-family: $font-sans-first
+    background-color: $googleplus-color
+    padding: 100px 0
+    text-shadow: black 1px 1px
+    .number
+        font-size: 50px
+        line-height: 50px
+        margin-left: 20px
+    .subject
+        font-size: 20px
+        line-height: 20px
+
+
+// ===== METODS =====
+// ===== INLINE =====
+.text-center
+    text-align: center
+.text-left
+    text-align: left
+.text-right
+    text-align: right
+
+.text-serif
+    font:  $font-serif-first
+.text-sans
+    font: $font-sans-first
+.text-monotype
+    font: $font-monotype-first
+
+.text-bold
+    font-weight: bold
+.text-normal
+    font-style: normal
+.text-italic
+    font-style: italic
+
+.text-underline
+    text-decoration: underline
+.text-strikethrought
+    text-decoration: line-through
+.text-overline
+    text-decoration: overline
+
+.text-uppercase
+    text-transform: uppercase
+.text-lowercase
+    text-transform: lowercase
+.text-capitalize
+    text-transform: capitalize
+// ===== METODS =====
+// ===== BLOCK =====
+.block-center
+    margin: 0 auto
+.block-left
+    margin-left: 0
+.block-right
+    margin-right: 0
+
+.fixed-top
+    position: fixed
+    top: 0px
+.fixed-bottom
+    position: fixed
+    bottom: 0px
+.sticky-top
+    position: sticky
+    top: 0
+// ======== END of GLOBAL STYLES ========
