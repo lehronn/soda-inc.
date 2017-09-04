@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         'development/css/*min.css',
         'development/js/*.min.js'
       ],
-      tasks: ['jshint', 'sass', 'htmlmin', 'cssmin', 'uglify']
+      tasks: ['jshint', 'sass', 'htmlmin', 'cssmin', 'copy', 'uglify']
     },
     jshint: {
       all: ['gruntfile.js',
@@ -19,12 +19,12 @@ module.exports = function(grunt) {
       ]
     },
     sass: {
+    	options: {
+          sourceMap: true
+        },
       dev: {
         files: {
           'development/css/main.css': 'development/sass/main.sass'
-        },
-        options: {
-          sourcemap: true
         }
       }
     },
@@ -50,6 +50,14 @@ module.exports = function(grunt) {
         }]
       }
     },
+    copy: {
+  		main: {
+    		expand: true,
+    		cwd: 'development/css',
+    		src: '*.map',
+    		dest: 'distribution/css/',
+  		},
+	},
     uglify: {
       my_target: {
         files: {
@@ -86,11 +94,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-browser-sync');
   // Default task(s).
   grunt.registerTask('default', ['browserSync', 'watch']);
-  grunt.registerTask('distribution', ['jshint', 'sass', 'htmlmin', 'cssmin', 'uglify']);
+  grunt.registerTask('distribution', ['jshint', 'sass', 'htmlmin', 'cssmin', 'copy', 'uglify']);
 };
-
