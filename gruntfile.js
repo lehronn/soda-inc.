@@ -19,15 +19,16 @@ module.exports = function(grunt) {
       ]
     },
     sass: {
-    	options: {
-          sourceMap: true
+        	options: {
+              sourceMap: true,
+              outputStyle: 'compressed'
+            },
+          dev: {
+            files: {
+              'distribution/css/main.css': 'development/sass/main.sass'
+            }
+          }
         },
-      dev: {
-        files: {
-          'development/css/main.css': 'development/sass/main.sass'
-        }
-      }
-    },
     htmlmin: { // Task
       dist: { // Target
         options: { // Target options
@@ -39,26 +40,10 @@ module.exports = function(grunt) {
         }
       }
     },
-    cssmin: {
-      target: {
-        files: [{
-          expand: true,
-          cwd: 'development/css',
-          src: ['*.css', '!*.min.css'],
-          dest: 'distribution/css',
-          ext: '.min.css'
-        }]
-      }
-    },
-    copy: {
-  		main: {
-    		expand: true,
-    		cwd: 'development/css',
-    		src: '*.map',
-    		dest: 'distribution/css/',
-  		},
-	},
     uglify: {
+      options: {
+          sourcemap: true
+        },
       my_target: {
         files: {
           'distribution/js/script.min.js': ['development/js/*.js']
