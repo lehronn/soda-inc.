@@ -3,32 +3,32 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     watch: {
-      files: ['development/html/*.html',
-        'development/sass/*.sass',
-        'development/scss/*.scss',
-        'development/css/*.css',
-        'development/js/*.js',
-        'development/css/*min.css',
-        'development/js/*.min.js'
+      files: ['dev/html/*.html',
+        'dev/sass/*.sass',
+        'dev/scss/*.scss',
+        'dev/css/*.css',
+        'dev/js/*.js',
+        'dev/css/*min.css',
+        'dev/js/*.min.js'
       ],
       tasks: ['jshint', 'sass', 'htmlmin', 'uglify']
     },
     jshint: {
       all: ['gruntfile.js',
-        'development/js/*.js'
+        'dev/js/*.js'
       ]
     },
     sass: {
-        	options: {
-              sourceMap: true,
-              outputStyle: 'compressed'
-            },
-          dev: {
-            files: {
-              'distribution/css/main.css': 'development/sass/main.sass'
-            }
-          }
-        },
+      options: {
+        sourceMap: true,
+        outputStyle: 'compressed'
+      },
+      dev: {
+        files: {
+          'dist/css/main.css': 'dev/sass/main.sass'
+        }
+      }
+    },
     htmlmin: { // Task
       dist: { // Target
         options: { // Target options
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
           collapseWhitespace: true
         },
         files: { // Dictionary of files
-          'distribution/index.html': 'development/html/index.html' // 'destination': 'source'
+          'dist/index.html': 'dev/html/index.html' // 'destination': 'source'
         }
       }
     },
@@ -44,10 +44,10 @@ module.exports = function(grunt) {
       my_target: {
         options: {
           sourceMap: true,
-          sourceMapName: 'distribution/js/script.min.map'
+          sourceMapName: 'dist/js/script.min.map'
         },
         files: {
-          'distribution/js/script.min.js': ['development/js/*.js']
+          'dist/js/script.min.js': ['dev/js/*.js']
         }
       }
     },
@@ -55,22 +55,22 @@ module.exports = function(grunt) {
       dynamic: {
         files: [{
           expand: true,
-          cwd: 'development/images/',
+          cwd: 'dev/images/',
           src: ['**/*.{png,jpg,jpeg,gif}'],
-          dest: 'distribution/images/'
+          dest: 'dist/images/'
         }]
       }
     },
     browserSync: {
       bsFiles: {
         src: [
-          'distribution/css/*.css',
-          'distribution/*.html'
+          'dist/css/*.css',
+          'dist/*.html'
         ]
       },
       options: {
         watchTask: true,
-        server: './distribution'
+        server: './dist'
       }
     }
   });
@@ -84,5 +84,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browser-sync');
   // Default task(s).
   grunt.registerTask('default', ['browserSync', 'watch']);
-  grunt.registerTask('distribution', ['jshint', 'sass', 'htmlmin', 'uglify']);
+  grunt.registerTask('dist', ['jshint', 'sass', 'htmlmin', 'uglify']);
 };

@@ -16,8 +16,6 @@ soda inc. is a fast and simply work model for webdesign projects with html5, sas
 
 
 #future roadmap
-    -automatic generate sources map for css and js
-    -clean with grunt sub-instructions
     -more styles (form for example.),
     -add grunt task for automatic generate favicons
     -add grunt task for automatic generate sitemap
@@ -26,12 +24,15 @@ soda inc. is a fast and simply work model for webdesign projects with html5, sas
 
 #docs
 catalog`s discription
--development - sources catalog with raw sources files.
--development/others - place for PSD, blueprints, mockups and others.
--distribution - catalog for publicate. all files after grunt tasks is lacated here.
+-dev - sources catalog with raw sources files.
+-dev/others - place for PSD, blueprints, mockups and others.
+-dist - catalog for publicate. all files after grunt tasks is lacated here.
 
 #grunt installation instructions
-(after node.js and ruby installation ofc. remember ruby-dev package!)
+(after node.js and ruby installation ofc. remember ev. ruby-dev package!)
+
+if You want install grunt packages write in your terminal in main project folder: "npm install".
+
 linux
 write to your terminal in projects catalog:
 npm install -g grunt-cli (global installation require admin privleges with su or sudo command.)
@@ -45,7 +46,7 @@ npm install grunt-contrib-jshint --save-dev
 npm install grunt-browser-sync --save-dev
 
 #grunt using insctruction
-in main catalog of project type in terminat:
-"grunt" > for all task watch and browsersync too but without image optimalisation.
+in main catalog of project type in terminal:
+"grunt" > for watch and browsersync too but without image optimalisation.
 "grunt imagemin" for only images optimalisation and without watch and browsersync task.
-"grunt distribution" for finished project (minifying all files, optimalisation images, debugged javascript, compilation and concatenation sass files without watch and browsersync task.
+"grunt dist" for finished project (minifying all files,  debugged javascript, compilation and concatenation sass files without watch and browsersync task but without image optimalisation.
